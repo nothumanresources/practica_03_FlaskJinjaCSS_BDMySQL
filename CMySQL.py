@@ -65,7 +65,7 @@ def f_agregar_registro(
     sql = """
         INSERT INTO clientes
         (
-            nombre,
+            ombre,
             apellido_paterno,
             apellido_materno,
             fecha_nacimiento,
