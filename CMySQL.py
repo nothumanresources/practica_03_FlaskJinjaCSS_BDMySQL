@@ -4,7 +4,7 @@ import pymysql
 # ================
 def f_conectar():
     timeout=10
-    conexion = pymysql(
+    conexion = pymysql.connect(
         charset="utf8mb4",
         connect_timeout=timeout,
         cursorclass=pymysql.cursors.DictCursor,
