@@ -8,13 +8,13 @@ def f_conectar():
         charset="utf8mb4",
         connect_timeout=timeout,
         cursorclass=pymysql.cursors.DictCursor,
+        db="comercio",
         host="mysql-1be0e22d-comercio.c.aivencloud.com",
         password="**********",
         read_timeout=timeout,
         port=27257,
         user="avnadmin",
-        write_timeout=timeout,
-        db="comercio"
+        write_timeout=timeout
     )
     return conexion
 
