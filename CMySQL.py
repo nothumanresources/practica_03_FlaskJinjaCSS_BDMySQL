@@ -1,13 +1,20 @@
-import mysql.connector
+import pymysql
 # ================
 # CONEXIÓN A MYSQL
 # ================
 def f_conectar():
-    conexion = mysql.connector.connect(
-        host="localhost",
-        user="rootuser",
-        password="rootpass",
-        database="comercio"
+    timeout=10
+    conexion = pymysql(
+        charset="utf8mb4",
+        connect_timeout=timeout,
+        cursorclass=pymysql.cursors.DictCursor,
+        host="mysql-1be0e22d-comercio.c.aivencloud.com",
+        password="**********",
+        read_timeout=timeout,
+        port=27257,
+        user="avnadmin",
+        write_timeout=timeout,
+        db="comercio"
     )
     return conexion
 
