@@ -10,7 +10,7 @@ def f_conectar():
         cursorclass=pymysql.cursors.DictCursor,
         db="comercio",
         host="mysql-1be0e22d-comercio.c.aivencloud.com",
-        password="**********",
+        password="AVNS_8U-l6weHRPHfi_dgByL",
         read_timeout=timeout,
         port=27257,
         user="avnadmin",
