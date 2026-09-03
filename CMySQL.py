@@ -43,7 +43,7 @@ def f_agregar_registro(
     #sql="""
     #CREATE TABLE clientes (
 #id_cliente INT AUTO_INCREMENT PRIMARY KEY,
-#ombre VARCHAR(50) NOT NULL,
+#nombre VARCHAR(50) NOT NULL,
 #apellido_paterno VARCHAR(50) NOT NULL,
 #pellido_materno VARCHAR(50),
 #fecha_nacimiento DATE,
@@ -65,7 +65,7 @@ def f_agregar_registro(
     sql = """
         INSERT INTO clientes
         (
-            ombre,
+            nombre,
             apellido_paterno,
             apellido_materno,
             fecha_nacimiento,
