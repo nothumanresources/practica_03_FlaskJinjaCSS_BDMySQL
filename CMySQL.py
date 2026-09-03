@@ -39,50 +39,9 @@ def f_agregar_registro(
 ):
     conexion = f_conectar()
     cursor = conexion.cursor()
-    cursor.execute("CREATE TABLE clientes (id_cliente INTEGER AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(50) NOT NULL, apellido_paterno VARCHAR(50) NOT NULL, apellido_materno VARCHAR(50), fecha_nacimiento DATE, genero VARCHAR(15), correo VARCHAR(100) NOT NULL, telefono VARCHAR(20), estado VARCHAR(50), ciudad VARCHAR(50), codigo_postal VARCHAR(10), tipo_cliente VARCHAR(20), intereses VARCHAR(200), limite_credito DECIMAL(10,2), observaciones VARCHAR(250))")
+    #cursor.execute("CREATE TABLE clientes (id_cliente INTEGER AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(50) NOT NULL, apellido_paterno VARCHAR(50) NOT NULL, apellido_materno VARCHAR(50), fecha_nacimiento DATE, genero VARCHAR(15), correo VARCHAR(100) NOT NULL, telefono VARCHAR(20), estado VARCHAR(50), ciudad VARCHAR(50), codigo_postal VARCHAR(10), tipo_cliente VARCHAR(20), intereses VARCHAR(200), limite_credito DECIMAL(10,2), observaciones VARCHAR(250))")
     
-    sql = """
-        INSERT INTO clientes
-        (
-            nombre,
-            apellido_paterno,
-            apellido_materno,
-            fecha_nacimiento,
-            genero,
-            correo,
-            telefono,
-            estado,
-            ciudad,
-            codigo_postal,
-            tipo_cliente,
-            intereses,
-            limite_credito,
-            observaciones
-        )
-        VALUES
-        (
-            %s, %s, %s, %s, %s, %s, %s,
-            %s, %s, %s, %s, %s, %s, %s
-        )
-    """
-    valores = (
-        nombre,
-        apellido_paterno,
-        apellido_materno,
-        fecha_nacimiento,
-        genero,
-        correo,
-        telefono,
-        estado,
-        ciudad,
-        codigo_postal,
-        tipo_cliente,
-        intereses,
-        limite_credito,
-        observaciones
-    )
-
-    cursor.execute(sql, valores)
+    cursor.execute("INSERT INTO clientes(nombre, apellido_paterno, apellido_materno, fecha_nacimiento, genero, correo, telefono, estado, ciudad, codigo_postal, tipo_cliente, intereses, limite_credito, observaciones) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",(nombre, apellido_paterno, apellido_materno, fecha_nacimiento, genero, correo, telefono, estado, ciudad, codigo_postal, tipo_cliente, intereses, limite_credito, observaciones))
     conexion.commit()
     cursor.close()
     conexion.close()
