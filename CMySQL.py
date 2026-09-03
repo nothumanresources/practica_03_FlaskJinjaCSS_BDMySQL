@@ -40,9 +40,9 @@ def f_agregar_registro(
     conexion = f_conectar()
     cursor = conexion.cursor()
 
-    sql="""
+   cursor.execute("""
     CREATE TABLE clientes (
-id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+        id_cliente INTEGER AUTO_INCREMENT PRIMARY KEY,
         nombre VARCHAR(50) NOT NULL,
         apellido_paterno VARCHAR(50) NOT NULL,
         apellido_materno VARCHAR(50),
@@ -58,9 +58,7 @@ id_cliente INT AUTO_INCREMENT PRIMARY KEY,
         limite_credito DECIMAL(10,2),
         observaciones VARCHAR(250)
         );
-    """
-   cursor.execute(sql)
-    conexion.commit()
+    """)
     
     sql = """
         INSERT INTO clientes
