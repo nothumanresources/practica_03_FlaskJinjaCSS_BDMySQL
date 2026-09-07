@@ -54,7 +54,7 @@ def f_listar_clientes():
     conexion = f_conectar()
 
     cursor = conexion.cursor()
-    cursor.execute("SELECT id_cliente, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, genero, correo, telefono, estado, ciudad, codigo_postal, tipo_cliente, intereses, limite_credito, observaciones FROM clientes ORDER BY id_cliente")
+    cursor.execute("SELECT id_cliente, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, genero, correo, telefono, estado, ciudad, codigo_postal, tipo_cliente, intereses, limite_credito, observaciones FROM clientes ORDER BY id_cliente;")
     #cursor.execute(sql)
 
     clientes = cursor.fetchall()
